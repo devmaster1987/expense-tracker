@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            ExpenseTracker
+        </div>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Transactions</a>
+            <a href="#">Budget</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+<section class="data-management">
+
+<h2>
+Data Management
+</h2>
+
+
+<button id="exportBtn">
+Export Data
+</button>
+
+
+<input 
+type="file"
+id="importFile"
+accept=".json"
+/>
+
+
+<button id="importBtn">
+Import Data
+</button>
+
+
+</section>
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span>
+                    Manage Your Money Smartly
+                </span>
+
+                <h1>
+                    Track Expenses.
+                    Control Your Budget.
+                </h1>
+
+                <p>
+                    A simple and powerful expense management
+                    application to track income and spending.
+                </p>
+
+                <button>
+                    Add Transaction
+                </button>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <h3>
+                    Current Balance
+                </h3>
+
+                <h2>
+                    $0.00
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Dashboard Stats -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <h4>
+                    Total Balance
+                </h4>
+
+                <p>
+                    $0.00
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card income">
+
+                <h4>
+                    Total Income
+                </h4>
+
+                <p>
+                    $0.00
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card expense">
+
+                <h4>
+                    Total Expense
+                </h4>
+
+                <p>
+                    $0.00
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <h4>
+                    Monthly Budget
+                </h4>
+
+                <p>
+                    $0.00
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <section class="analytics">
+
+
+            <h2>
+                Expense Analytics
+            </h2>
+
+
+            <div class="charts">
+
+
+                <div class="chart-card">
+
+                    <h3>
+                        Expense By Category
+                    </h3>
+
+                    <canvas id="categoryChart"></canvas>
+
+
+                </div>
+
+
+
+
+                <div class="chart-card">
+
+                    <h3>
+                        Income vs Expense
+                    </h3>
+
+
+                    <canvas id="incomeExpenseChart"></canvas>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- Add Transaction -->
+
+        <section class="transaction-section">
+
+
+            <div class="section-header">
+
+                <h2>
+                    Add Transaction
+                </h2>
+
+            </div>
+
+
+            <form id="transactionForm">
+                <input type="hidden" id="editId">
+
+                <input type="text" placeholder="Transaction Title">
+
+
+                <input type="number" placeholder="Amount">
+
+
+                <select>
+
+                    <option>
+                        Select Type
+                    </option>
+
+                    <option>
+                        Income
+                    </option>
+
+                    <option>
+                        Expense
+                    </option>
+
+                </select>
+
+
+                <select>
+
+                    <option>
+                        Category
+                    </option>
+
+                    <option>
+                        Food
+                    </option>
+
+                    <option>
+                        Travel
+                    </option>
+
+                    <option>
+                        Shopping
+                    </option>
+
+                    <option>
+                        Bills
+                    </option>
+
+                </select>
+
+
+
+                <input type="date">
+
+
+                <textarea placeholder="Notes">
+</textarea>
+
+
+                <button type="submit" id="saveBtn">
+                    Add Transaction
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+
+
+
+        <!-- Transactions -->
+
+
+        <section class="transactions">
+
+
+            <div class="section-header">
+
+                <h2>
+                    Transactions
+                </h2>
+
+
+                <input type="search" placeholder="Search transaction">
+                <div class="filter-box">
+
+
+                    <select id="typeFilter">
+
+                        <option value="All">
+                            All Transactions
+                        </option>
+
+
+                        <option value="Income">
+                            Income
+                        </option>
+
+
+                        <option value="Expense">
+                            Expense
+                        </option>
+
+
+                    </select>
+
+
+
+                    <select id="sortFilter">
+
+
+                        <option value="latest">
+                            Latest
+                        </option>
+
+
+                        <option value="oldest">
+                            Oldest
+                        </option>
+
+
+                        <option value="high">
+                            Highest Amount
+                        </option>
+
+
+                        <option value="low">
+                            Lowest Amount
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div id="transactionList">
+
+
+                <p>
+                    No transactions available.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <section class="budget">
+
+
+            <h2>
+                Budget Management
+            </h2>
+
+
+            <div class="budget-box">
+
+
+                <input type="number" id="budgetInput" placeholder="Enter monthly budget">
+
+
+                <button id="budgetBtn">
+                    Set Budget
+                </button>
+
+
+
+                <h3 id="budgetAmount">
+                    $0.00
+                </h3>
+
+
+
+                <p id="remainingBudget">
+                    Remaining: $0.00
+                </p>
+
+
+
+                <div class="progress">
+
+                    <div id="progressBar"></div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 ExpenseTracker. All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>

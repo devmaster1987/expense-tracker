@@ -1,0 +1,804 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+
+    --primary: #2563eb;
+    --secondary: #eff6ff;
+    --dark: #111827;
+    --text: #374151;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --border: #e5e7eb;
+
+    --success: #16a34a;
+    --danger: #dc2626;
+
+}
+
+
+body {
+
+    background: var(--light);
+    color: var(--text);
+
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+
+.header {
+
+    width: 100%;
+    padding: 20px 8%;
+
+    background: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+}
+
+
+
+.logo {
+
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+
+}
+
+
+
+.header nav {
+
+    display: flex;
+    gap: 30px;
+
+}
+
+
+
+.header nav a {
+
+    text-decoration: none;
+    color: var(--text);
+
+    font-size: 15px;
+
+    transition: .3s;
+
+}
+
+
+
+.header nav a:hover {
+
+    color: var(--primary);
+
+}
+
+
+
+
+/* =========================
+   HERO
+========================= */
+
+
+.hero {
+
+    padding: 70px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 350px;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+
+.hero-content span {
+
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    background: var(--secondary);
+
+    color: var(--primary);
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+}
+
+
+
+.hero-content h1 {
+
+    font-size: 48px;
+
+    line-height: 1.2;
+
+    margin: 20px 0;
+
+    color: var(--dark);
+
+}
+
+
+
+.hero-content p {
+
+    max-width: 500px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: .3s;
+
+}
+
+
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    opacity: .9;
+
+}
+
+
+
+
+.hero-card {
+
+    background: var(--white);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+
+}
+
+
+
+.hero-card h2 {
+
+    font-size: 40px;
+
+    margin-top: 20px;
+
+    color: var(--primary);
+
+}
+
+
+
+/* =========================
+   STATS
+========================= */
+
+
+.stats {
+
+    padding: 20px 8% 60px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+}
+
+
+
+.stat-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+
+}
+
+
+
+.stat-card h4 {
+
+    color: #6b7280;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.stat-card p {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: var(--dark);
+
+}
+
+
+
+.income p {
+
+    color: var(--success);
+
+}
+
+
+
+.expense p {
+
+    color: var(--danger);
+
+}
+
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+
+.transaction-section,
+.transactions,
+.budget {
+
+
+    margin: 0 8% 60px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+
+
+}
+
+
+
+.section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+.section-header h2 {
+
+    color: var(--dark);
+
+}
+
+
+
+
+/* =========================
+   FORM
+========================= */
+
+
+form {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+
+
+textarea {
+
+    height: 120px;
+
+    resize: none;
+
+}
+
+
+
+form button {
+
+    grid-column: 1/-1;
+
+}
+
+
+
+/* =========================
+   TRANSACTION LIST
+========================= */
+
+
+#transactionList {
+
+    min-height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #9ca3af;
+
+}
+
+
+
+/* =========================
+   BUDGET
+========================= */
+
+
+.budget-box {
+
+    background: var(--secondary);
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+}
+
+
+
+.budget-box h3 {
+
+    font-size: 35px;
+
+    margin: 15px;
+
+    color: var(--primary);
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #111827;
+
+    color: white;
+
+}
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:900px) {
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .stats {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px) {
+
+
+    .header {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+
+    .header nav {
+
+        gap: 15px;
+
+    }
+
+
+
+    .hero-content h1 {
+
+        font-size: 35px;
+
+    }
+
+
+
+    .stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .transaction-section,
+    .transactions,
+    .budget {
+
+        margin: 0 20px 40px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+   TRANSACTION CARD
+========================= */
+
+
+.transaction-item {
+
+    width: 100%;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.transaction-item h4 {
+
+    color: var(--dark);
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.transaction-item p {
+
+    font-size: 13px;
+
+    color: #6b7280;
+
+}
+
+
+
+.transaction-item strong {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+}
+
+
+
+.transaction-item .Income {
+
+    color: var(--success);
+
+}
+
+
+
+.transaction-item .Expense {
+
+    color: var(--danger);
+
+}
+
+
+
+.transaction-item button {
+
+    background: #ef4444;
+
+    padding: 8px 15px;
+
+    font-size: 13px;
+
+}
+
+
+
+.transaction-item button:hover {
+
+    background: #dc2626;
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   BUDGET PROGRESS
+========================= */
+
+
+.budget-box input{
+
+margin-bottom:20px;
+
+}
+
+
+
+.progress{
+
+width:100%;
+
+height:15px;
+
+background:#e5e7eb;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:20px;
+
+}
+
+
+
+#progressBar{
+
+height:100%;
+
+width:0%;
+
+background:#2563eb;
+
+transition:.4s;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   ANALYTICS
+========================= */
+
+
+.charts{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+}
+
+
+
+.chart-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.chart-card canvas{
+
+max-height:300px;
+
+}
+
+
+
+@media(max-width:768px){
+
+.charts{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+
+
+
+
+/* =========================
+   DATA MANAGEMENT
+========================= */
+
+
+.data-management{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+margin-top:30px;
+
+}
+
+
+.data-management button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+padding:12px 25px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+margin-right:15px;
+
+}
+
+
+.data-management input{
+
+margin:15px;
+
+}
