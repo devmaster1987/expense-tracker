@@ -1,15 +1,25 @@
 ---
-name: Feature Request
-about: Suggest an improvement
+name: Bug Report
+about: Report a problem
 ---
 
-## Feature Description
+## Description
+
+Describe the issue.
+
+## Steps To Reproduce
+
+1.
+2.
+3.
+
+## Expected Behavior
 
 
-## Problem
+## Screenshots
 
 
-## Proposed Solution
+## Environment
 
-
-## Additional Information
+Browser:
+Device:
