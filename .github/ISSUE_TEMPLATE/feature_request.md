@@ -1,6 +1,8 @@
 ---
-name: Bug Report
-about: Report a problem
+---
+name: Feature Request
+about: Suggest a new feature or improvement
+---
 ---
 
 ## Description
