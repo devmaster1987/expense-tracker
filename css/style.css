@@ -802,3 +802,88 @@ margin-right:15px;
 margin:15px;
 
 }
+/* =========================
+   MOBILE RESPONSIVENESS IMPROVEMENTS
+========================= */
+
+@media(max-width:768px){
+    .header{
+        flex-direction:column;
+        gap:10px;
+        padding:15px 15px;
+    }
+    .header nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+    .header nav a{
+        font-size:14px;
+        padding:5px 10px;
+    }
+    .hero-content h1{
+        font-size:28px;
+    }
+    .hero-content p{
+        font-size:14px;
+    }
+    .stats{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+    .stat-card{
+        padding:15px;
+    }
+    form{
+        padding:15px;
+    }
+    form input,
+    form select{
+        width:100%;
+        box-sizing:border-box;
+    }
+    .data-management{
+        padding:15px;
+    }
+    .data-management button{
+        width:100%;
+        margin-bottom:10px;
+        margin-right:0;
+    }
+    .data-management input{
+        width:100%;
+        margin:10px 0;
+    }
+    table{
+        font-size:13px;
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+    .charts{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:480px){
+    .header nav{
+        gap:8px;
+    }
+    .header nav a{
+        font-size:12px;
+        padding:4px 8px;
+    }
+    .hero-content h1{
+        font-size:22px;
+    }
+    .stat-card h3{
+        font-size:20px;
+    }
+    .stat-card p{
+        font-size:11px;
+    }
+    button{
+        padding:10px 15px;
+        font-size:13px;
+    }
+}
