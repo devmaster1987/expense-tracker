@@ -850,6 +850,16 @@ sortFilter.addEventListener(
 ========================= */
 
 
+function getChartTextColor() {
+
+    return document.body.classList.contains("dark-mode")
+        ? "#f1f5f9"
+        : "#374151";
+
+}
+
+
+
 function updateCharts() {
 
 
@@ -935,6 +945,24 @@ function updateCharts() {
                     }]
 
 
+                },
+
+                options: {
+
+                    plugins: {
+
+                        legend: {
+
+                            labels: {
+
+                                color: getChartTextColor()
+
+                            }
+
+                        }
+
+                    }
+
                 }
 
 
@@ -993,6 +1021,48 @@ function updateCharts() {
 
                     }]
 
+
+                },
+
+                options: {
+
+                    plugins: {
+
+                        legend: {
+
+                            labels: {
+
+                                color: getChartTextColor()
+
+                            }
+
+                        }
+
+                    },
+
+                    scales: {
+
+                        x: {
+
+                            ticks: {
+
+                                color: getChartTextColor()
+
+                            }
+
+                        },
+
+                        y: {
+
+                            ticks: {
+
+                                color: getChartTextColor()
+
+                            }
+
+                        }
+
+                    }
 
                 }
 
@@ -1169,4 +1239,72 @@ reader.readAsText(file);
 
 
 }
+);
+
+
+
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+
+const themeToggle = document.getElementById("themeToggle");
+
+
+
+function applyTheme(theme) {
+
+    if (theme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        themeToggle.innerText = "☀️ Light Mode";
+
+    }
+    else {
+
+        document.body.classList.remove("dark-mode");
+
+        themeToggle.innerText = "🌙 Dark Mode";
+
+    }
+
+}
+
+
+
+// Load saved theme on page load
+
+const savedTheme = localStorage.getItem("theme") || "light";
+
+applyTheme(savedTheme);
+
+
+
+themeToggle.addEventListener(
+    "click",
+    function () {
+
+
+        const isDark =
+            document.body.classList.contains("dark-mode");
+
+
+        const newTheme =
+            isDark ? "light" : "dark";
+
+
+        localStorage.setItem("theme", newTheme);
+
+
+        applyTheme(newTheme);
+
+
+        updateCharts();
+
+
+    }
+
 );
