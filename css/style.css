@@ -887,3 +887,53 @@ margin:15px;
         font-size:13px;
     }
 }
+
+/* =========================
+   DASHBOARD CARD ANIMATIONS
+========================= */
+
+.stat-card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+button{
+    transition: all 0.2s ease;
+}
+button:hover{
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+button:active{
+    transform: scale(0.98);
+}
+
+.stat-card{
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+.stat-card:nth-child(1){animation-delay:0.1s}
+.stat-card:nth-child(2){animation-delay:0.2s}
+.stat-card:nth-child(3){animation-delay:0.3s}
+.stat-card:nth-child(4){animation-delay:0.4s}
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .stat-card, button{
+        animation:none;
+        transition:none;
+    }
+}
