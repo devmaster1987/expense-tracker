@@ -1099,6 +1099,42 @@ link.click();
 }
 );
 
+// Export CSV
+
+const exportCsvBtn = document.getElementById("exportCsvBtn");
+
+if (exportCsvBtn) {
+exportCsvBtn.addEventListener("click", function () {
+  const headers = ["ID", "Title", "Amount", "Type", "Category", "Date", "Notes"];
+  const csvRows = [headers.join(",")];
+
+  transactions.forEach(function (t, i) {
+    const row = [
+      i + 1,
+      "\"" + String(t.title || "").replace(/"/g, "\"\"") + "\"",
+      String(t.amount || 0),
+      "\"" + String(t.type || "").replace(/"/g, "\"\"") + "\"",
+      "\"" + String(t.category || "").replace(/"/g, "\"\"") + "\"",
+      "\"" + String(t.date || "").replace(/"/g, "\"\"") + "\"",
+      "\"" + String(t.notes || "").replace(/"/g, "\"\"") + "\""
+    ];
+    csvRows.push(row.join(","));
+  });
+
+  const csvContent = csvRows.join("
+");
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  const now = new Date();
+  const dateStr = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+  link.download = "transactions-export-" + dateStr + ".csv";
+  link.click();
+  URL.revokeObjectURL(url);
+});
+}
+
 
 
 
