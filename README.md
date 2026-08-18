@@ -59,3 +59,11 @@ Users can manage income and expenses, track budgets, analyze spending, and store
 ## 📂 Project Structure
 
 Expense Tracker
+
+
+## Future Improvements
+
+- Dark mode support
+- CSV export functionality
+- Better mobile responsiveness
+- Dashboard UI improvements
