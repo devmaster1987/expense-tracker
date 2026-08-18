@@ -1,9 +1,13 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 :root {
   --primary: #2563eb;
   --secondary: #eff6ff;
@@ -15,9 +19,11 @@
   --success: #16a34a;
   --danger: #dc2626;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body.dark-mode {
   --primary: #3b82f6;
   --secondary: #1e293b;
@@ -29,18 +35,22 @@ body.dark-mode {
   --success: #22c55e;
   --danger: #f87171;
 }
+
 body {
   background: var(--light);
   color: var(--text);
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
 body.dark-mode #themeToggle {
   background: var(--white);
   color: var(--text);
   border: 1px solid var(--border);
 }
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
 .header {
   width: 100%;
   padding: 20px 8%;
@@ -52,34 +62,35 @@ body.dark-mode #themeToggle {
   position: sticky;
   top: 0;
   z-index: 10;
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
   animation: fadeDown 0.55s ease both;
 }
+
 .logo {
   font-size: 24px;
   font-weight: 700;
   color: var(--primary);
   transition: transform 0.3s ease;
 }
+
 .logo:hover {
   transform: scale(1.03);
 }
+
 .header nav {
   display: flex;
   gap: 30px;
   align-items: center;
 }
+
 .header nav a {
   text-decoration: none;
   color: var(--text);
   font-size: 15px;
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
   position: relative;
 }
+
 .header nav a::after {
   content: "";
   position: absolute;
@@ -91,13 +102,19 @@ body.dark-mode #themeToggle {
   border-radius: 10px;
   transition: width 0.25s ease;
 }
+
 .header nav a:hover {
   color: var(--primary);
   transform: translateY(-1px);
 }
+
 .header nav a:hover::after {
   width: 100%;
 }
+
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
   padding: 70px 8%;
   display: grid;
@@ -105,9 +122,11 @@ body.dark-mode #themeToggle {
   gap: 50px;
   align-items: center;
 }
+
 .hero-content {
   animation: fadeUp 0.65s ease both;
 }
+
 .hero-content span {
   display: inline-block;
   padding: 8px 15px;
@@ -117,20 +136,27 @@ body.dark-mode #themeToggle {
   font-size: 14px;
   transition: transform 0.3s ease;
 }
+
 .hero-content span:hover {
   transform: translateY(-2px);
 }
+
 .hero-content h1 {
   font-size: 48px;
   line-height: 1.2;
   margin: 20px 0;
   color: var(--dark);
 }
+
 .hero-content p {
   max-width: 500px;
   line-height: 1.7;
   margin-bottom: 25px;
 }
+
+/* =========================
+   BUTTONS
+========================= */
 button {
   border: none;
   cursor: pointer;
@@ -139,21 +165,21 @@ button {
   background: var(--primary);
   color: #fff;
   font-size: 15px;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    opacity 0.25s ease,
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease,
     background 0.25s ease;
 }
+
 button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
   opacity: 0.95;
 }
+
 button:active {
   transform: translateY(0) scale(0.97);
   box-shadow: none;
 }
+
 button:focus-visible,
 .header nav a:focus-visible,
 input:focus-visible,
@@ -162,80 +188,98 @@ textarea:focus-visible {
   outline: 3px solid rgba(37, 99, 235, 0.25);
   outline-offset: 3px;
 }
+
+/* =========================
+   HERO CARD
+========================= */
 .hero-card {
   background: var(--white);
   padding: 35px;
   border-radius: 20px;
   border: 1px solid transparent;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   animation: fadeUp 0.7s 0.08s ease both;
 }
+
 .hero-card:hover {
   transform: translateY(-7px);
   box-shadow: 0 20px 45px rgba(37, 99, 235, 0.14);
   border-color: rgba(37, 99, 235, 0.25);
 }
+
 .hero-card h2 {
   font-size: 40px;
   margin-top: 20px;
   color: var(--primary);
 }
+
+/* =========================
+   STATS SECTION
+========================= */
 .stats {
   padding: 20px 8% 60px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
+
 .stat-card {
   background: var(--white);
   padding: 25px;
   border-radius: 18px;
   border: 1px solid transparent;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   animation: fadeUp 0.55s ease both;
 }
+
 .stat-card:nth-child(2) {
   animation-delay: 0.08s;
 }
+
 .stat-card:nth-child(3) {
   animation-delay: 0.16s;
 }
+
 .stat-card:nth-child(4) {
   animation-delay: 0.24s;
 }
+
 .stat-card:hover {
   transform: translateY(-7px);
   box-shadow: 0 16px 35px rgba(37, 99, 235, 0.12);
   border-color: rgba(37, 99, 235, 0.25);
 }
+
 .stat-card h4 {
   color: #6b7280;
   margin-bottom: 15px;
 }
+
 .stat-card p {
   font-size: 28px;
   font-weight: bold;
   color: var(--dark);
   transition: transform 0.3s ease;
 }
+
 .stat-card:hover p {
   transform: scale(1.04);
   transform-origin: left center;
 }
+
 .income p {
   color: var(--success);
 }
+
 .expense p {
   color: var(--danger);
 }
+
+/* =========================
+   SECTIONS
+========================= */
 .transaction-section,
 .transactions,
 .budget {
@@ -245,31 +289,56 @@ textarea:focus-visible {
   border-radius: 20px;
   border: 1px solid transparent;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 .transaction-section:hover,
 .transactions:hover,
 .budget:hover {
   box-shadow: 0 15px 38px rgba(0, 0, 0, 0.08);
   border-color: var(--border);
 }
+
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
+
 .section-header h2 {
   color: var(--dark);
+  flex: 1 100%;
 }
+
+.section-header input[type="search"] {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-box {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.filter-box select {
+  min-width: 150px;
+}
+
+/* =========================
+   FORMS
+========================= */
 form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
 input,
 select,
 textarea {
@@ -281,16 +350,15 @@ textarea {
   font-size: 14px;
   background: var(--white);
   color: var(--text);
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
+
 input:hover,
 select:hover,
 textarea:hover {
   border-color: rgba(37, 99, 235, 0.45);
 }
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -298,13 +366,19 @@ textarea:focus {
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
   transform: translateY(-1px);
 }
+
 textarea {
   height: 120px;
   resize: none;
 }
+
 form button {
-  grid-column: 1/-1;
+  grid-column: 1 / -1;
 }
+
+/* =========================
+   TRANSACTION LIST
+========================= */
 #transactionList {
   min-height: 100px;
   display: flex;
@@ -312,27 +386,7 @@ form button {
   align-items: center;
   color: #9ca3af;
 }
-.budget-box {
-  background: var(--secondary);
-  padding: 30px;
-  border-radius: 18px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-.budget-box:hover {
-  transform: translateY(-3px);
-}
-.budget-box h3 {
-  font-size: 35px;
-  margin: 15px;
-  color: var(--primary);
-}
-footer {
-  padding: 30px;
-  text-align: center;
-  background: #111827;
-  color: #fff;
-}
+
 .transaction-item {
   width: 100%;
   padding: 20px;
@@ -343,338 +397,78 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   animation: fadeUp 0.35s ease both;
 }
+
 .transaction-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   border-color: rgba(37, 99, 235, 0.3);
 }
+
 .transaction-item h4 {
   color: var(--dark);
   margin-bottom: 8px;
 }
+
 .transaction-item p {
   font-size: 13px;
   color: #6b7280;
 }
+
 .transaction-item strong {
   display: block;
   margin-bottom: 10px;
   font-size: 18px;
 }
+
 .transaction-item .Income {
   color: var(--success);
 }
+
 .transaction-item .Expense {
   color: var(--danger);
 }
+
 .transaction-item button {
   background: #ef4444;
   padding: 8px 15px;
   font-size: 13px;
 }
+
 .transaction-item button:hover {
-    background: #dc2626;
-}
-
-
-
-
-
-
-/* =========================
-   BUDGET PROGRESS
-========================= */
-
-
-.budget-box input{
-
-margin-bottom:20px;
-
-}
-
-
-
-.progress{
-
-width:100%;
-
-height:15px;
-
-background:#e5e7eb;
-
-border-radius:20px;
-
-overflow:hidden;
-
-margin-top:20px;
-
-}
-
-
-
-#progressBar{
-
-height:100%;
-
-width:0%;
-
-background:#2563eb;
-
-transition:.4s;
-
-}
-
-
-
-
-
-
-
-
-
-
-/* =========================
-   ANALYTICS
-========================= */
-
-
-.charts{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:30px;
-
-}
-
-
-
-.chart-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:20px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-}
-
-
-
-.chart-card canvas{
-
-max-height:300px;
-
-}
-
-
-
-@media(max-width:768px){
-
-.charts{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-
-
-
-
-
-
-/* =========================
-   DATA MANAGEMENT
-========================= */
-
-
-.data-management{
-
-background:white;
-
-padding:30px;
-
-border-radius:20px;
-
-margin-top:30px;
-
-}
-
-
-.data-management button{
-
-background:#2563eb;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:10px;
-
-cursor:pointer;
-
-margin-right:15px;
-
-}
-
-
-.data-management input{
-
-margin:15px;
-
-}
-/* =========================
-   MOBILE RESPONSIVENESS IMPROVEMENTS
-========================= */
-
-@media(max-width:768px){
-    .header{
-        flex-direction:column;
-        gap:10px;
-        padding:15px 15px;
-    }
-    .header nav{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
-    }
-    .header nav a{
-        font-size:14px;
-        padding:5px 10px;
-    }
-    .hero-content h1{
-        font-size:28px;
-    }
-    .hero-content p{
-        font-size:14px;
-    }
-    .stats{
-        grid-template-columns:1fr;
-        gap:10px;
-    }
-    .stat-card{
-        padding:15px;
-    }
-    form{
-        padding:15px;
-    }
-    form input,
-    form select{
-        width:100%;
-        box-sizing:border-box;
-    }
-    .data-management{
-        padding:15px;
-    }
-    .data-management button{
-        width:100%;
-        margin-bottom:10px;
-        margin-right:0;
-    }
-    .data-management input{
-        width:100%;
-        margin:10px 0;
-    }
-    table{
-        font-size:13px;
-        display:block;
-        overflow-x:auto;
-        white-space:nowrap;
-    }
-    .charts{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:480px){
-    .header nav{
-        gap:8px;
-    }
-    .header nav a{
-        font-size:12px;
-        padding:4px 8px;
-    }
-    .hero-content h1{
-        font-size:22px;
-    }
-    .stat-card h3{
-        font-size:20px;
-    }
-    .stat-card p{
-        font-size:11px;
-    }
-    button{
-        padding:10px 15px;
-        font-size:13px;
-    }
-}
-
-/* =========================
-   DASHBOARD CARD ANIMATIONS
-========================= */
-
-.stat-card{
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.stat-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-button{
-    transition: all 0.2s ease;
-}
-button:hover{
-    transform: scale(1.03);
-    filter: brightness(1.1);
-}
-button:active{
-    transform: scale(0.98);
-}
-
-.stat-card{
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
-}
-.stat-card:nth-child(1){animation-delay:0.1s}
-.stat-card:nth-child(2){animation-delay:0.2s}
-.stat-card:nth-child(3){animation-delay:0.3s}
-.stat-card:nth-child(4){animation-delay:0.4s}
-
-@keyframes fadeInUp{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@media(prefers-reduced-motion:reduce){
-    .stat-card, button{
-        animation:none;
-        transition:none;
-    }
   background: #dc2626;
 }
+
+/* =========================
+   BUDGET BOX
+========================= */
+.budget-box {
+  background: var(--secondary);
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.budget-box:hover {
+  transform: translateY(-3px);
+}
+
+.budget-box h3 {
+  font-size: 35px;
+  margin: 15px;
+  color: var(--primary);
+}
+
 .budget-box input {
   margin-bottom: 20px;
 }
+
+/* =========================
+   PROGRESS BAR
+========================= */
 .progress {
   width: 100%;
   height: 15px;
@@ -683,44 +477,55 @@ button:active{
   overflow: hidden;
   margin-top: 20px;
 }
+
 #progressBar {
   height: 100%;
   width: 0;
   background: #2563eb;
   transition: width 0.4s ease;
 }
+
+/* =========================
+   ANALYTICS & CHARTS
+========================= */
 .analytics {
   padding: 0 8% 60px;
 }
+
 .analytics > h2 {
   margin-bottom: 25px;
   color: var(--dark);
 }
+
 .charts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
+
 .chart-card {
   background: var(--white);
   padding: 30px;
   border-radius: 20px;
   border: 1px solid transparent;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   animation: fadeUp 0.6s ease both;
 }
+
 .chart-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 38px rgba(37, 99, 235, 0.12);
   border-color: rgba(37, 99, 235, 0.25);
 }
+
 .chart-card canvas {
   max-height: 300px;
 }
+
+/* =========================
+   DATA MANAGEMENT
+========================= */
 .data-management {
   background: var(--white);
   padding: 30px;
@@ -728,21 +533,21 @@ button:active{
   margin: 30px 8% 45px;
   border: 1px solid transparent;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   animation: fadeUp 0.55s ease both;
 }
+
 .data-management:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 35px rgba(37, 99, 235, 0.1);
   border-color: rgba(37, 99, 235, 0.2);
 }
+
 .data-management h2 {
   margin-bottom: 15px;
   color: var(--dark);
 }
+
 .data-management button {
   background: #2563eb;
   color: #fff;
@@ -752,9 +557,24 @@ button:active{
   cursor: pointer;
   margin-right: 15px;
 }
+
 .data-management input {
   margin: 15px;
 }
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 30px;
+  text-align: center;
+  background: #111827;
+  color: #fff;
+}
+
+/* =========================
+   KEYFRAME ANIMATIONS
+========================= */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -765,6 +585,7 @@ button:active{
     transform: translateY(0);
   }
 }
+
 @keyframes fadeDown {
   from {
     opacity: 0;
@@ -775,63 +596,686 @@ button:active{
     transform: translateY(0);
   }
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE DESIGN - TABLETS (≤ 900px)
+========================= */
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
+
+  .hero-card {
+    margin: 0 auto;
+    min-width: 250px;
+  }
+
   .stats {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .charts {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .header {
-    flex-direction: column;
     gap: 20px;
   }
-  .header nav {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+
+  .charts {
+    grid-template-columns: 1fr 1fr;
   }
-  .hero-content h1 {
-    font-size: 35px;
-  }
-  .stats {
-    grid-template-columns: 1fr;
-  }
+
   form {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================
+   RESPONSIVE DESIGN - TABLETS (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 5%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .header nav a {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .hero {
+    padding: 40px 5%;
+    gap: 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .stats {
+    padding: 30px 5% 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-card h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .stat-card p {
+    font-size: 24px;
+  }
+
   .transaction-section,
   .transactions,
   .budget {
-    margin: 0 20px 40px;
+    margin: 0 5% 30px;
+    padding: 25px;
   }
-  .data-management {
-    margin: 30px 20px 40px;
-  }
-  .hero {
-    padding: 50px 20px;
-  }
-  .stats,
-  .analytics {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .transaction-item {
+
+  .section-header {
+    flex-direction: column;
     align-items: flex-start;
     gap: 15px;
   }
+
+  .section-header h2 {
+    width: 100%;
+    font-size: 22px;
+  }
+
+  .section-header input[type="search"] {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .filter-box {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .filter-box select {
+    width: 100%;
+    min-width: unset;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .budget-box {
+    padding: 20px;
+  }
+
+  .budget-box h3 {
+    font-size: 28px;
+  }
+
+  .transaction-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .transaction-item div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .transaction-item button {
+    padding: 7px 12px;
+    font-size: 12px;
+    flex: 1;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .chart-card canvas {
+    max-height: 250px;
+  }
+
+  .analytics {
+    padding: 0 5% 40px;
+  }
+
+  .analytics > h2 {
+    font-size: 22px;
+  }
+
+  .data-management {
+    margin: 20px 5% 30px;
+    padding: 20px;
+  }
+
+  .data-management h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .data-management button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    margin-right: 0;
+  }
+
+  .data-management input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
 }
+
+/* =========================
+   RESPONSIVE DESIGN - MOBILE (≤ 600px)
+========================= */
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 3%;
+  }
+
+  .header nav {
+    gap: 8px;
+  }
+
+  .header nav a {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 30px 3%;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-content span {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  button {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  .stats {
+    padding: 20px 3% 30px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card h4 {
+    font-size: 12px;
+  }
+
+  .stat-card p {
+    font-size: 22px;
+  }
+
+  .hero-card {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .hero-card h2 {
+    font-size: 32px;
+  }
+
+  .transaction-section,
+  .transactions,
+  .budget {
+    margin: 0 3% 25px;
+    padding: 20px;
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+  }
+
+  .section-header input[type="search"] {
+    width: 100%;
+  }
+
+  .filter-box {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .filter-box select {
+    width: 100%;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  form button {
+    padding: 12px;
+  }
+
+  .budget-box {
+    padding: 18px;
+    text-align: center;
+  }
+
+  .budget-box h3 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .budget-box input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .progress {
+    height: 12px;
+    margin-top: 15px;
+  }
+
+  #transactionList {
+    min-height: 80px;
+  }
+
+  .transaction-item {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .transaction-item h4 {
+    font-size: 14px;
+  }
+
+  .transaction-item p {
+    font-size: 12px;
+  }
+
+  .transaction-item strong {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .transaction-item button {
+    width: 48%;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .chart-card {
+    padding: 15px;
+  }
+
+  .chart-card canvas {
+    max-height: 200px;
+  }
+
+  .analytics {
+    padding: 0 3% 30px;
+  }
+
+  .analytics > h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .data-management {
+    margin: 15px 3% 25px;
+    padding: 15px;
+  }
+
+  .data-management h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .data-management button {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    margin: 8px 0;
+    margin-right: 0;
+  }
+
+  .data-management input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+  }
+}
+
+/* =========================
+   RESPONSIVE DESIGN - SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 3%;
+  }
+
+  .header nav {
+    gap: 6px;
+  }
+
+  .header nav a {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+
+  .header nav button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .hero {
+    padding: 25px 3%;
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content span {
+    font-size: 11px;
+  }
+
+  .hero-content button {
+    width: 100%;
+  }
+
+  button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+
+  .hero-card h2 {
+    font-size: 28px;
+    margin-top: 15px;
+  }
+
+  .hero-card h3 {
+    font-size: 14px;
+  }
+
+  .stats {
+    padding: 15px 3% 25px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-card h4 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .stat-card p {
+    font-size: 20px;
+  }
+
+  .transaction-section,
+  .transactions,
+  .budget {
+    margin: 0 3% 20px;
+    padding: 15px;
+  }
+
+  .section-header h2 {
+    font-size: 18px;
+  }
+
+  .section-header input[type="search"] {
+    width: 100%;
+  }
+
+  .filter-box {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .filter-box select {
+    width: 100%;
+  }
+
+  form {
+    gap: 10px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 9px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  textarea {
+    height: 90px;
+  }
+
+  .budget-box {
+    padding: 15px;
+  }
+
+  .budget-box h3 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+
+  .budget-box input {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .progress {
+    height: 10px;
+  }
+
+  #transactionList {
+    min-height: 70px;
+    font-size: 13px;
+  }
+
+  .transaction-item {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .transaction-item h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .transaction-item p {
+    font-size: 11px;
+  }
+
+  .transaction-item strong {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .transaction-item button {
+    width: 48%;
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .charts {
+    gap: 12px;
+  }
+
+  .chart-card {
+    padding: 12px;
+  }
+
+  .chart-card canvas {
+    max-height: 180px;
+  }
+
+  .analytics {
+    padding: 0 3% 25px;
+  }
+
+  .analytics > h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .data-management {
+    margin: 12px 3% 20px;
+    padding: 12px;
+  }
+
+  .data-management h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .data-management button {
+    padding: 9px;
+    font-size: 12px;
+    margin: 6px 0;
+  }
+
+  .data-management input {
+    padding: 9px;
+    margin: 6px 0;
+  }
+}
+
+/* =========================
+   RESPONSIVE DESIGN - EXTRA SMALL (≤ 360px)
+========================= */
+@media (max-width: 360px) {
+  .header nav a {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .stat-card p {
+    font-size: 18px;
+  }
+
+  .transaction-item button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .transaction-item div:last-child {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   PREFERS REDUCED MOTION
+========================= */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -839,4 +1283,11 @@ button:active{
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .stat-card,
+  button {
+    animation: none;
+    transition: none;
+  }
 }
