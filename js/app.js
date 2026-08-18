@@ -357,8 +357,7 @@ exportCsvBtn.addEventListener("click", function () {
     csvRows.push(row.join(","));
   });
 
-  const csvContent = csvRows.join("
-");
+  const csvContent = csvRows.join("\r\n");
   const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
@@ -377,25 +376,9 @@ exportCsvBtn.addEventListener("click", function () {
 
 
 
-// Import JSON
-
-importBtn.addEventListener(
-"click",
-function(){
-
-
-const file =
-importFile.files[0];
-
-
-if(!file){
-
-alert(
-"Please select JSON file"
-);
-
-return;
-
+/* =========================
+   HERO + NAV INTERACTIONS (CONTINUED)
+========================= */
 const navLinks = document.querySelectorAll(".header nav a");
 if (navLinks.length >= 3) {
     navLinks[0].addEventListener("click", e => {
@@ -410,7 +393,8 @@ if (navLinks.length >= 3) {
         e.preventDefault();
         document.querySelector(".budget").scrollIntoView({ behavior: "smooth" });
     });
- main}
+}
+
 /* =========================
    INITIAL LOAD
 ========================= */
